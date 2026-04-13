@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────── */
+/* Base                                             */
+/* ──────────────────────────────────────────────── */
+
+:root {
+  --bg-gradient-start: #060912;
+  --bg-gradient-mid: #0c1220;
+  --bg-gradient-end: #0a0e1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(145deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
+  color: #e2e8f0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ──────────────────────────────────────────────── */
+/* Glass Card                                       */
+/* ──────────────────────────────────────────────── */
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    @apply border-white/[0.12] bg-white/[0.05];
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* Status badges */
+  .badge-success {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 ring-1 ring-emerald-500/20;
+  }
+
+  .badge-error {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400 ring-1 ring-red-500/20;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-400 ring-1 ring-amber-500/20;
+  }
+
+  .badge-info {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-400 ring-1 ring-indigo-500/20;
+  }
+
+  /* Code block */
+  .code-block {
+    @apply rounded-xl bg-surface-950/80 border border-white/[0.06] p-4 font-mono text-sm leading-relaxed overflow-x-auto;
+    tab-size: 2;
+  }
+
+  /* Glow button */
+  .btn-glow {
+    @apply relative px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(99, 102, 241, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .btn-glow:active {
+    transform: translateY(0);
+  }
+
+  .btn-outline {
+    @apply px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 border border-white/10 text-white/70 hover:border-white/20 hover:text-white hover:bg-white/[0.03];
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* Scrollbar                                        */
+/* ──────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ──────────────────────────────────────────────── */
+/* Syntax highlighting (minimal)                    */
+/* ──────────────────────────────────────────────── */
+
+.syntax-keyword { color: #c084fc; }
+.syntax-string { color: #34d399; }
+.syntax-comment { color: #64748b; font-style: italic; }
+.syntax-type { color: #67e8f9; }
+.syntax-fn { color: #fbbf24; }
+.syntax-const { color: #818cf8; }
+.syntax-punct { color: #94a3b8; }
