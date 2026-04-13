@@ -10,7 +10,7 @@ export default function HomePage() {
       <div className="relative animate-fade-in">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-400">
           <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse-subtle" />
-          v0.1.0 — Result Monad for Axios
+          v1.0.0 — Result Monad for Axios
         </div>
 
         <h1 className="text-5xl sm:text-7xl font-black tracking-tight bg-gradient-to-br from-white via-white/90 to-white/50 bg-clip-text text-transparent leading-tight">
